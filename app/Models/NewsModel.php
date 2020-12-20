@@ -16,7 +16,7 @@ class NewsModel extends Model
     public function getNews($slug = false)
     {
         if ($slug === false) {
-            return $this->findAll();
+            return $this->findAll(); // Retourne les lignes tu tableau en un objet
         }
 
         return $this->asArray()
