@@ -13,10 +13,12 @@ class NewsModel extends Model
 {
     protected $table = 'news';
 
+    protected $allowedFields = ['title', 'slug', 'body'];
+
     public function getNews($slug = false)
     {
         if ($slug === false) {
-            return $this->findAll(); // Retourne les lignes tu tableau en un objet
+            return $this->findAll(); // Retourne les lignes du tableau en un objet
         }
 
         return $this->asArray()
